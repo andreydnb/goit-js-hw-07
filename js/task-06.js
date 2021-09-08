@@ -5,11 +5,13 @@ input.addEventListener('blur', onInputBlur)
 
 function onInputBlur(event) {
     if (dataLength == input.value.length) {
-        input.classList.add('valid')
-        input.classList.remove('invalid')
+        replaceClass('valid', 'invalid')
     }
         else {
-        input.classList.add('invalid')
-        input.classList.remove('valid')
+        replaceClass('invalid', 'valid')
         }
     }
+function replaceClass(addClass, removeClass) {
+    input.classList.add(addClass)
+    input.classList.remove(removeClass)
+}
